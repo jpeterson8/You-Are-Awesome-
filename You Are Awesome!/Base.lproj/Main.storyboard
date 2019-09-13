@@ -18,16 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDh-J3-v6R">
-                                <rect key="frame" x="16" y="63" width="343" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDh-J3-v6R">
+                                <rect key="frame" x="16" y="44" width="343" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="zft-nz-8VM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="30"/>
                                 <color key="textColor" red="0.34386676150000001" green="0.57033860390000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-iS-CyL">
-                                <rect key="frame" x="135" y="167" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SIr-aw-S7x">
+                                <rect key="frame" x="16" y="205" width="343" height="482"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAx-XZ-OJ5">
+                                <rect key="frame" x="16" y="157" width="86" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Tgi-Pe-qOY"/>
+                                    <constraint firstAttribute="width" constant="86" id="iFS-Fq-nuy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-1q-RtT">
+                                <rect key="frame" x="110" y="152" width="51" height="31"/>
+                                <connections>
+                                    <action selector="soundSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="S5m-qs-OXM"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOJ-iS-CyL">
+                                <rect key="frame" x="250" y="148" width="109" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="LmX-jc-hBZ"/>
+                                    <constraint firstAttribute="width" constant="109" id="ggh-Aw-9yB"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aih-JA-Gy1"/>
@@ -35,10 +59,28 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CDh-J3-v6R" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="29w-Mf-rVS"/>
+                            <constraint firstItem="iAx-XZ-OJ5" firstAttribute="top" secondItem="CDh-J3-v6R" secondAttribute="bottom" constant="17" id="5P3-qf-OZD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CDh-J3-v6R" secondAttribute="trailing" constant="16" id="656-Ay-tdr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SIr-aw-S7x" secondAttribute="bottom" constant="91" id="9Fv-4W-dzP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SIr-aw-S7x" secondAttribute="bottom" constant="91" id="C8E-p3-mZL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IOJ-iS-CyL" secondAttribute="trailing" constant="16" id="HoD-XI-doc"/>
+                            <constraint firstItem="CDh-J3-v6R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="M2h-lm-B4x"/>
+                            <constraint firstItem="gMI-1q-RtT" firstAttribute="top" secondItem="CDh-J3-v6R" secondAttribute="bottom" constant="12" id="WHE-RH-UvG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SIr-aw-S7x" secondAttribute="trailing" constant="16" id="X6z-fF-2si"/>
+                            <constraint firstItem="SIr-aw-S7x" firstAttribute="top" secondItem="IOJ-iS-CyL" secondAttribute="bottom" constant="19" id="ZER-rD-5iL"/>
+                            <constraint firstItem="IOJ-iS-CyL" firstAttribute="top" secondItem="CDh-J3-v6R" secondAttribute="bottom" constant="8" id="Zdd-KS-DoW"/>
+                            <constraint firstItem="SIr-aw-S7x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="rJT-R8-bWY"/>
+                            <constraint firstItem="gMI-1q-RtT" firstAttribute="leading" secondItem="iAx-XZ-OJ5" secondAttribute="trailing" constant="8" id="to6-9Z-QIR"/>
+                            <constraint firstItem="iAx-XZ-OJ5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zbb-1l-juh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="messageLabel" destination="CDh-J3-v6R" id="oKg-X3-ffX"/>
+                        <outlet property="awesomeimageView" destination="SIr-aw-S7x" id="prt-SE-XH1"/>
+                        <outlet property="messageLabel" destination="CDh-J3-v6R" id="vJv-Zk-jZ8"/>
+                        <outlet property="soundSwitch" destination="gMI-1q-RtT" id="qKv-r4-NV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
